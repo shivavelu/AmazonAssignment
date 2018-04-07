@@ -61,7 +61,7 @@ public class TestBase {
 		}
 		catch(Exception e)
 		{
-			//log.info("driver is not launched, could corruped or settings issue");
+			log.info("driver is not launched, could corruped or settings issue");
 			e.printStackTrace();
 		}
 		
