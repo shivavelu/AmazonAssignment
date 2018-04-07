@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="26623" started-at="2018-04-07T18:12:29Z" finished-at="2018-04-07T18:12:56Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="26623" started-at="2018-04-07T18:12:29Z" finished-at="2018-04-07T18:12:56Z">
+      <class name="com.amazon.test.SearchResultTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.amazon.test.SearchResultTest@7823a2f9]" name="setUp" is-config="true" duration-ms="4631" started-at="2018-04-07T23:42:29Z" finished-at="2018-04-07T23:42:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="openHomePage()[pri:1, instance:com.amazon.test.SearchResultTest@7823a2f9]" name="openHomePage" duration-ms="15412" started-at="2018-04-07T23:42:34Z" finished-at="2018-04-07T23:42:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openHomePage -->
+        <test-method status="PASS" signature="searchProudct()[pri:2, instance:com.amazon.test.SearchResultTest@7823a2f9]" name="searchProudct" duration-ms="5799" started-at="2018-04-07T23:42:49Z" finished-at="2018-04-07T23:42:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProudct -->
+        <test-method status="PASS" signature="tierDown()[pri:0, instance:com.amazon.test.SearchResultTest@7823a2f9]" name="tierDown" is-config="true" duration-ms="760" started-at="2018-04-07T23:42:55Z" finished-at="2018-04-07T23:42:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tierDown -->
+      </class> <!-- com.amazon.test.SearchResultTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,6 @@
+com\amazon\util\JsonHandler.class
+com\amazon\util\TestUtil.class
+com\amazon\customexception\CustomExceptions.class
+com\amazon\access\SearchData.class
+com\amazon\base\TestBase.class
+com\amazon\pages\HomePage.class
