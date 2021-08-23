@@ -2,8 +2,6 @@ package com.amazon.test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import org.json.JSONException;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -25,12 +23,24 @@ public class SearchResultTest extends TestBase {
 		super();
 	}
 
-	SearchData getTestData() throws JSONException, Exception {
+	SearchData getTestData() throws Exception {
 		SearchData sd = new SearchData();
 
-		sd.setSearchCatagory(jh.readJSON().getString("searchCatagory"));
-		sd.setSearchItem(jh.readJSON().getString("searchProduct"));
-		sd.setResultSet(jh.readJSON().getString("resultSet"));
+		try {
+			sd.setSearchCatagory((String)jh.readJSON().get("searchCatagory"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			sd.setSearchItem((String)jh.readJSON().get("searchProduct"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			sd.setResultSet((String)jh.readJSON().get("resultSet"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return sd;
 
 	}
@@ -44,19 +54,19 @@ public class SearchResultTest extends TestBase {
 	}
 
 	@Test(priority = 1)
-	public void openHomePage() throws JSONException, Exception {
+	public void openHomePage() throws Exception {
 		homePage.openPage(prop.getProperty("url"));
-		Assert.assertEquals(jh.readJSON().getString("title"), TestUtil.getTitle());
+		Assert.assertEquals((String)jh.readJSON().get("title"), TestUtil.getTitle());
 
 	}
 
 	@Test(priority = 2)
-	public void searchProudct() throws JSONException, Exception {
+	public void searchProudct() throws Exception {
 
 		homePage.selectOption(getTestData()).enterSearchItem(getTestData());
 		String srh = homePage.searchprg.getText();
 		al.add(homePage.getTitle(getTestData()));
-		Assert.assertTrue(srh.contains(jh.readJSON().getString("searched")));
+		Assert.assertTrue(srh.contains((String)jh.readJSON().get("searched")));
 
 	}
 
