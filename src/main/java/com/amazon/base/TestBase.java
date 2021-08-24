@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.helpers.Loader;
 import org.openqa.selenium.WebDriver;
@@ -47,11 +48,15 @@ public class TestBase {
 	
 	public static void initialization(){
 		String browserName = prop.getProperty("browser");
-		
-		try
+
+		if(browserName.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}
+		/*try
 		{
 		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "./resources/chromedriver.exe");	
+			System.setProperty("webdriver.chrome.driver", "./resources/chromedriver.exe");
 			driver = new ChromeDriver(); 
 		}
 		else if(browserName.equals("FF")){
@@ -63,7 +68,7 @@ public class TestBase {
 		{
 			log.info("driver is not launched, could corruped or settings issue");
 			e.printStackTrace();
-		}
+		}*/
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
